@@ -66,3 +66,104 @@ blockquote {
 	- https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/
 */
 
+/*vytvoření gridu a rozmístění prvků na stránce*/
+.blog {
+	display: grid;
+	grid-template-columns: 1fr 4fr 2fr;
+	column-gap: 40px;
+	row-gap: 18px;
+	align-items: start;
+}
+
+.blog > header,
+.blog > p,
+.blog > h2,
+.blog > footer {
+	grid-column: 2 / 3;
+}
+
+.tip-vlevo {
+	grid-column: 1 / 2;
+}
+
+.tip-vpravo {
+	grid-column: -2 / -1;
+}
+
+figure,
+blockquote {
+	grid-column: 1 / -1;
+}
+
+/*nastylování jednotlivých prvků - barva, odsazení atp.*/
+img {width: 100%;}
+
+figure {margin: 24px 0;}
+
+blockquote {
+	text-align: center;
+	color: var(--seda);
+	font-size: 36px;
+	margin: 6px 0;
+}
+
+blockquote::before,
+blockquote::after {
+	content: "";
+	display: block;
+	height: 2px;
+	width: 120px;
+	transform: inherit;
+	background-color: var(--limetka);
+	margin: 18px auto;
+}
+
+h1 {
+	color: var(--zelena);
+	font-size: 84px;
+	margin-bottom: 0.8em;
+	line-height: 1.2;
+}
+
+h2 {
+	color: var(--zelena);
+	font-size: 60px;
+	margin: 24px 0 18px 0;
+}
+
+p {margin: 0;}
+
+.meta,
+figcaption,
+footer {
+	color: var(--seda);
+}
+
+.tip {
+	padding: 18px;
+	margin: 0;
+	font-size: 14px;
+	background-color: var(--svetla);
+	color: var(--tmava);
+}
+
+.tip-vlevo {
+	border-right: 3px solid var(--zluta);
+	text-align: right;
+}
+
+.tip-vpravo {
+	border-left: 3px solid var(--zluta);
+	text-align: left;
+}
+
+.tip a {color: var(--oranzova);}
+
+.tip img {margin-bottom: 18px;}
+
+footer a {color: var(--seda);}
+
+footer {
+	font-size: 14px;
+	margin: 24px 0;
+}
